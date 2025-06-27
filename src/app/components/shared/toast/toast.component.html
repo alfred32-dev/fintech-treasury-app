@@ -1,1 +1,11 @@
-<p>toast works!</p>
+<div aria-live="polite" class="toast-container">
+  <div
+    *ngFor="let toast of toasts"
+    class="toast"
+    [ngClass]="toast.type"
+    role="alert"
+  >
+    <span class="message">{{ toast.message }}</span>
+    <button class="close-btn" (click)="dismiss(toast.id)" aria-label="Dismiss">×</button>
+  </div>
+</div>

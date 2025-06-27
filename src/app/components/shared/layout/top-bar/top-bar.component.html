@@ -1,1 +1,11 @@
-<p>top-bar works!</p>
+<nav class="topbar">
+  <div class="logo" (click)="goTo('/dashboard')">TREASURY</div>
+  <div class="menu-icon" (click)="toggleMenu()">☰</div>
+  <div class="nav-links" [class.open]="isMenuOpen">
+    <button (click)="goTo('/dashboard')">Dashboard</button>
+    <button (click)="goTo('/transactions')">Transactions</button>
+    <button (click)="goTo('/export')">Downloads</button>
+    <button (click)="goTo('/settings')">Settings</button>
+
+  </div>
+</nav>

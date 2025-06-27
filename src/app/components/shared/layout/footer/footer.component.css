@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  padding: 1rem 0;
+  background: rgba(255, 255, 255, 0.4);  /* semi-transparent white */
+  backdrop-filter: blur(8px);             /* glass effect */
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 0.9rem;
+  color: #333333;
+  margin-top: 2rem;
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  letter-spacing: 0.5px;
+}
