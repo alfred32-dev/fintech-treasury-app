@@ -1,1 +1,11 @@
-<p>export works!</p>
+<div class="export-container">
+  <h1>Export Transactions</h1>
+
+  <div *ngIf="loading()" class="loading">Loading transactions…</div>
+
+  <div *ngIf="!loading()" class="export-controls">
+    <p>Total records: {{ transactions().length }}</p>
+    <button (click)="onExportCSV()">Download CSV</button>
+    <button (click)="onExportPDF()">Download PDF</button>
+  </div>
+</div>

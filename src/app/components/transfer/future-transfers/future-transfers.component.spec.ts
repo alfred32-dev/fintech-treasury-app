@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingsComponent } from './settings.component';
+import { FutureTransfersComponent } from './future-transfers.component';
 
-describe('SettingsComponent', () => {
-  let component: SettingsComponent;
-  let fixture: ComponentFixture<SettingsComponent>;
+describe('FutureTransfersComponent', () => {
+  let component: FutureTransfersComponent;
+  let fixture: ComponentFixture<FutureTransfersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SettingsComponent]
+      imports: [FutureTransfersComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SettingsComponent);
+    fixture = TestBed.createComponent(FutureTransfersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

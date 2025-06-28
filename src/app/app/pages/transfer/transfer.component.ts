@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { FooterComponent } from '../../../components/shared/layout/footer/footer.component';
+import { TransferFormComponent } from '../../../components/transfer/transfer-form/transfer-form.component';
+import { FutureTransfersComponent } from '../../../components/transfer/future-transfers/future-transfers.component';
 
 @Component({
   selector: 'app-transfer',
-  imports: [],
+  standalone: true,
+  imports: [
+    CommonModule,
+    TransferFormComponent,
+    FooterComponent
+  ],
   templateUrl: './transfer.component.html',
-  styleUrl: './transfer.component.css'
+  styleUrls: ['./transfer.component.css']
 })
-export class TransferComponent {
-
-}
+export class TransferComponent {}

@@ -1,1 +1,31 @@
-<p>accounts-list works!</p>
+<!-- src/app/features/accounts-list/accounts-list.component.html -->
+<div class="filter-bar">
+  <label>
+    Currency:
+    <select [(ngModel)]="currencyFilter">
+      <option value="">All</option>
+      <option *ngFor="let c of currencies" [value]="c">{{ c }}</option>
+    </select>
+  </label>
+
+  <label>
+    Search:
+    <input
+      type="text"
+      placeholder="Account name…"
+      [(ngModel)]="textFilter"
+    />
+  </label>
+</div>
+
+<div class="cards-container">
+  <div *ngFor="let acc of filteredAccounts" class="card">
+    <h2>{{ acc.name }}</h2>
+    <p class="currency">{{ acc.currency }}</p>
+    <p class="balance">{{ acc.balance | number:'1.2-2' }}</p>
+  </div>
+
+  <div *ngIf="!filteredAccounts.length" class="empty-state">
+    No accounts match your filters.
+  </div>
+</div>

@@ -1,8 +1,66 @@
-<!-- Test Firebase Button (for dev/debug purposes) -->
-<div style="padding: 1rem; text-align: center;">
-  <button (click)="runFirebaseTest()" style="padding: 0.75rem 1.5rem; font-size: 1rem;">
-    🔁 Run Firebase Connection Test
-  </button>
+<div class="dashboard-container">
+  <h1>Dashboard Overview</h1>
+
+  <!-- Action Buttons -->
+  <div class="actions">
+    <button (click)="goTo('/transfer')">Transfer Funds</button>
+    <button (click)="goTo('/transactions')">View All Transactions</button>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary">
+    <div class="card summary-card">
+      <div class="label">Accounts</div>
+      <div class="value">{{ accountCount() }}</div>
+    </div>
+    <div class="card summary-card">
+      <div class="label">Transactions</div>
+      <div class="value">{{ transactionCount() }}</div>
+    </div>
+    <ng-container *ngFor="let bal of totalBalances()">
+      <div class="card summary-card">
+        <div class="label">Total {{ bal.currency }}</div>
+        <div class="value">{{ bal.total | number:'1.2-2' }}</div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Recent Transactions -->
+  <div class="section">
+    <h2>Recent Transactions</h2>
+    <div *ngIf="txLoading()" class="loading">Loading transactions…</div>
+    <table *ngIf="!txLoading()" class="transactions-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Amount</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tx of recentTransactions()" class="tx-row">
+          <td>{{ tx.timestamp | date:'short' }}</td>
+          <td>{{ tx.fromName }}</td>
+          <td>{{ tx.toName }}</td>
+          <td>{{ tx.amount | number:'1.2-2' }} {{ tx.currency }}</td>
+          <td>
+            <span class="status" [ngClass]="tx.status.toLowerCase()">
+              {{ tx.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Account List -->
+  <div class="section">
+    <h2>All Accounts</h2>
+    <div *ngIf="accLoading()" class="loading">Loading accounts…</div>
+    <app-accounts-list *ngIf="!accLoading()" [accounts]="accounts()"></app-accounts-list>
+  </div>
 </div>
 
 <app-footer></app-footer>

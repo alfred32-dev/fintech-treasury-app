@@ -1,0 +1,25 @@
+{
+  "accounts": [
+    { "id": "acc_01", "name": "Main Checking",    "currency": "USD", "balance": 5420.75 },
+    { "id": "acc_02", "name": "Savings Goal",      "currency": "USD", "balance": 15430.00 },
+    { "id": "acc_03", "name": "Emergency Cash",     "currency": "USD", "balance": 8000.00 },
+    { "id": "acc_04", "name": "Daily Spending",    "currency": "KES", "balance": 120000.00 },
+    { "id": "acc_05", "name": "Travel Fund",        "currency": "KES", "balance": 45000.50 },
+    { "id": "acc_06", "name": "Bills Wallet",       "currency": "KES", "balance": 32000.00 },
+    { "id": "acc_07", "name": "Business Account",   "currency": "NGN", "balance": 2500000.00 },
+    { "id": "acc_08", "name": "Investment NGN",     "currency": "NGN", "balance": 780000.25 },
+    { "id": "acc_09", "name": "Crypto Savings",     "currency": "NGN", "balance": 150000.75 },
+    { "id": "acc_10", "name": "Holiday Budget USD", "currency": "USD", "balance": 410.25 }
+  ],
+  "transactions": [
+    {
+      "id": "tx_001",
+      "timestamp": 1719600000000,
+      "fromAccountId": "acc_01",
+      "toAccountId":   "acc_02",
+      "amount": 250.00,
+      "currency": "USD",
+      "status": "Completed"
+    }
+  ]
+}

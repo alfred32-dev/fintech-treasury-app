@@ -1,1 +1,36 @@
-<p>transactions works!</p>
+<!-- src/app/features/transactions/transactions.component.html -->
+
+<div class="transactions-container">
+  <h1>Transaction History</h1>
+
+  <div *ngIf="loading()" class="loading">Loading transactions…</div>
+
+  <table *ngIf="!loading()" class="transactions-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Note</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tx of recentTransactions()" class="tx-row">
+        <td>{{ tx.timestamp | date:'short' }}</td>
+        <td>{{ accountNameMap()[tx.fromAccountId] || tx.fromAccountId }}</td>
+        <td>{{ accountNameMap()[tx.toAccountId]   || tx.toAccountId }}</td>
+        <td>{{ tx.amount | number:'1.2-2' }} {{ tx.currency }}</td>
+        <td>
+          <span class="status" [ngClass]="tx.status.toLowerCase()">
+            {{ tx.status }}
+          </span>
+        </td>
+        <td>{{ tx.note || '—' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-future-transfers></app-future-transfers>
+</div>

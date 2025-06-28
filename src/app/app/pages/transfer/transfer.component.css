@@ -1,0 +1,14 @@
+.transfer-page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+}
+.transfer-page h1, .transfer-page h2 {
+  color: #008080;
+}
+.transfer-page hr {
+  margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}

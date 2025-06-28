@@ -1,0 +1,54 @@
+<!-- future-transfers.component.html -->
+<div class="dashboard-container">
+
+  <h1>Scheduled Transfers</h1>
+
+  <div *ngIf="loading()" class="loading">Loading scheduled transfers…</div>
+
+  <table *ngIf="!loading() && scheduled().length" class="transactions-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Amount</th>
+        <th>Note</th>
+        <th class="actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tx of scheduled()" [class.overdue]="isOverdue(tx)">
+        <td>{{ tx.timestamp | date:'short' }}</td>
+        <td>{{ accountMap()[tx.fromAccountId] || 'Unknown' }}</td>
+        <td>{{ accountMap()[tx.toAccountId] || 'Unknown' }}</td>
+        <td>{{ tx.amount | number:'1.2-2' }} {{ tx.currency }}</td>
+        <td>{{ tx.note || '—' }}</td>
+        <td class="actions">
+          <button (click)="view(tx)">View</button>
+          <button (click)="cancel(tx.id)">Cancel</button>
+          <button *ngIf="isOverdue(tx)" (click)="execute(tx)">Execute Now</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading() && !scheduled().length" class="empty">
+    No scheduled transfers.
+  </div>
+
+  <!-- Details Overlay -->
+  <div *ngIf="selected()" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Transfer Details</h2>
+      <p><strong>Date:</strong> {{ selected()!.timestamp | date:'full' }}</p>
+      <p><strong>From:</strong> {{ accountMap()[selected()!.fromAccountId] }}</p>
+      <p><strong>To:</strong> {{ accountMap()[selected()!.toAccountId] }}</p>
+      <p><strong>Amount:</strong> {{ selected()!.amount | number:'1.2-2' }} {{ selected()!.currency }}</p>
+      <p *ngIf="selected()!.note"><strong>Note:</strong> {{ selected()!.note }}</p>
+      <div class="actions">
+        <button (click)="closeView()">Close</button>
+      </div>
+    </div>
+  </div>
+
+</div>
