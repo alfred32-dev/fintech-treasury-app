@@ -2,6 +2,7 @@
   max-width: 700px;
   margin: 0 auto;
   padding: 2rem;
+  box-sizing: border-box;
   background: #fff;
 }
 .transfer-page h1, .transfer-page h2 {
@@ -11,4 +12,39 @@
   margin: 2rem 0;
   border: none;
   border-top: 1px solid #e0e0e0;
+}
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .transfer-page {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+}
+
+/* Large phones */
+@media (max-width: 600px) {
+  .transfer-page {
+    padding: 1.2rem;
+  }
+  .transfer-page h1,
+  .transfer-page h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .transfer-page {
+    padding: 1rem;
+  }
+  .transfer-page h1,
+  .transfer-page h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  .transfer-page hr {
+    margin: 1.5rem 0;
+  }
 }
