@@ -1,4 +1,3 @@
-// src/app/features/transactions/transactions.component.ts
 
 import { Component, OnInit, Signal, computed, inject } from '@angular/core';
 import { Store } from '@ngxs/store';
