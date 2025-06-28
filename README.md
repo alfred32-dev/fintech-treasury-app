@@ -10,10 +10,8 @@ https://685facb687e4de54e11bcc45--loquacious-donut-755a96.netlify.app/
 ## 🔑 Key Accomplishments
 
 - **Accounts Management**  
-  View, add, and organize multiple financial accounts at a glance.
 
 - **Real‑Time Transactions**  
-  Effortlessly see your latest transactions with automatic Firebase sync and live updates.
 
 - **Instant & Scheduled Transfers**  
   Transfer funds immediately or schedule future transfers with our robust `SchedulerService`.
@@ -48,23 +46,30 @@ https://685facb687e4de54e11bcc45--loquacious-donut-755a96.netlify.app/
 - **Summary Cards:** Total accounts, transactions, and balances by currency.  
 - **Quick Actions:** One‑click navigation to Transfer or Transactions pages.  
 - **Recent Transactions:** Horizontally scrollable, status‑tagged, color‑coded entries.
+- - **All Accounts:** View all Accounts with their balances and currencies. Sort by Account and Currency.
+
 
 ### 2. Transfer Funds  
-- **Immediate Transfer:** Fill out recipient, amount, and currency — submit instantly.  
-- **Future Transfer:** Pick a future date; our scheduler queues and executes it on time.  
+- **Immediate Transfer:** Fill out the recipient, amount, and currency — submit instantly.  
+- **Future Transfer:** Pick a future date; the scheduler queues and executes it on time.  
 - **UX Enhancements:** Inline validations, loading spinners, and preview blocks.
 
-### 3. Future Transfers  
-- **List View:** See all pending future transfers with statuses.  
-- **Overdue Highlight:** Pending transfers past their scheduled date are flagged in yellow.  
-- **Actions:** Edit, cancel, or execute manually if needed.
+### 3. Future Transfers  Edit, cancel, or execute manually if needed.
 
-### 4. Transactions List  
-- **Full History:** Filter by date, account, or status.  
-- **Responsive Table:** Auto‑scroll wrapper on mobile; adaptive font and padding.
+### 4. Transactions
+- **List View:** See all pending future transfers with statuses.  
+- **Actions:**  List  
+
 
 ### 5. Export Data  
 - **CSV/Excel Export:** Download your transaction history in the format of your choice.
+
+### 6. Centralized toast service.
+### 7. FX Service for rate conversions
+### 8. Firebase Real Time Database for persistence. 
+
+
+
 
 ---
 
