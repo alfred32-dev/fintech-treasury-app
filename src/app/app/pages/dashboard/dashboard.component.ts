@@ -1,4 +1,3 @@
-// src/app/features/dashboard/dashboard.component.ts
 
 import { Component, OnInit, Signal, computed, effect, inject } from '@angular/core';
 import { Store } from '@ngxs/store';
