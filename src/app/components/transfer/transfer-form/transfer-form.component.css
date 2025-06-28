@@ -1,5 +1,4 @@
-/* src/app/features/transfer/transfer.component.css */
-
+/* Base Form Styles */
 .form-wrapper {
   position: relative;
   background: #f9fafb;
@@ -13,7 +12,9 @@
   position: absolute;
   inset: 0;
   background: rgba(255,255,255,0.8);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
 }
 
@@ -21,7 +22,8 @@
   width: 32px; height: 32px;
   border: 4px solid #e0f2f1;
   border-top: 4px solid #005f73;
-  border-radius: 50%; animation: spin 1s linear infinite;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
@@ -93,4 +95,89 @@ button[disabled] {
   background: #ccc;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+/* Responsive Breakpoints */
+
+/* ≤768px (tablet) */
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+  .row {
+    margin-bottom: 1rem;
+  }
+  .row input,
+  .row select {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.95rem;
+  }
+  button {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  .preview {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+}
+
+/* ≤600px (large phone) */
+@media (max-width: 600px) {
+  .form-wrapper {
+    padding: 1.2rem;
+  }
+  .row {
+    margin-bottom: 0.8rem;
+  }
+  .row label {
+    font-size: 0.95rem;
+  }
+  .row input,
+  .row select {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  .hint {
+    font-size: 0.8rem;
+  }
+  .preview {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ≤480px (small phone) */
+@media (max-width: 480px) {
+  .form-wrapper {
+    padding: 1rem;
+  }
+  .row {
+    margin-bottom: 0.6rem;
+  }
+  .row label {
+    font-size: 0.9rem;
+  }
+  .row input,
+  .row select {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .hint {
+    font-size: 0.75rem;
+  }
+  .preview {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    margin-bottom: 0.8rem;
+  }
+  button {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
 }

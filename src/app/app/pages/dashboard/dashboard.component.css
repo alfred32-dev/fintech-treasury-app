@@ -1,3 +1,4 @@
+/* Base Dashboard Styles */
 .dashboard-container {
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, sans-serif;
@@ -11,11 +12,15 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+/* Actions (buttons) */
 .actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-bottom: 1.5rem;
 }
 .actions button {
-  margin-right: 0.75rem;
+  flex: 0 0 auto;
   padding: 0.6rem 1.2rem;
   border: none;
   background: linear-gradient(135deg, #008891, #005f73);
@@ -28,13 +33,13 @@ h1 {
   transform: translateY(-2px);
 }
 
+/* Summary Cards */
 .summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
 }
-
 .summary-card {
   background: #ffffff;
   border-radius: 10px;
@@ -53,6 +58,7 @@ h1 {
   margin-top: 0.3rem;
 }
 
+/* Sections */
 .section {
   margin-top: 2.5rem;
 }
@@ -61,6 +67,8 @@ h1 {
   margin-bottom: 1rem;
   color: #005f73;
 }
+
+/* Loading State */
 .loading {
   font-size: 1rem;
   color: #888;
@@ -68,9 +76,17 @@ h1 {
   margin: 1rem 0;
 }
 
+/* Table Wrapper for Horizontal Scroll */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Transactions Table */
 .transactions-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* ensure horizontal scroll if too narrow */
 }
 .transactions-table th,
 .transactions-table td {
@@ -102,4 +118,64 @@ h1 {
 .tx-row .status.failed {
   background: #f8d7da;
   color: #721c24;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet & large-phone */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .summary-card {
+    padding: 1rem;
+  }
+  .summary-card .value {
+    font-size: 1.4rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .actions button {
+    width: 100%;
+    margin-right: 0;
+  }
+  .summary {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .summary-card {
+    padding: 0.8rem;
+  }
+  .summary-card .label {
+    font-size: 0.8rem;
+  }
+  .summary-card .value {
+    font-size: 1.2rem;
+  }
+  .transactions-table,
+  .transactions-table th,
+  .transactions-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+  }
 }
